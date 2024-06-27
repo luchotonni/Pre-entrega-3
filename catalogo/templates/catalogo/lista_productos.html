@@ -1,0 +1,28 @@
+{% extends 'catalogo/base.html' %}
+
+{% block content %}
+<h2>Productos</h2>
+<ul>
+    <li><a href="{% url 'agregar_producto' 'cartera' %}">Agregar Cartera</a></li>
+    <li><a href="{% url 'agregar_producto' 'remera' %}">Agregar Remera</a></li>
+    <li><a href="{% url 'agregar_producto' 'pulsera' %}">Agregar Pulsera</a></li>
+</ul>
+<h3>Carteras</h3>
+<ul>
+    {% for cartera in carteras %}
+    <li>{{ cartera.nombre }} - ${{ cartera.precio }}</li>
+    {% endfor %}
+</ul>
+<h3>Remeras</h3>
+<ul>
+    {% for remera in remeras %}
+    <li>{{ remera.nombre }} - ${{ remera.precio }}</li>
+    {% endfor %}
+</ul>
+<h3>Pulseras</h3>
+<ul>
+    {% for pulsera in pulseras %}
+    <li>{{ pulsera.nombre }} - ${{ pulsera.precio }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

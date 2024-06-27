@@ -1,0 +1,30 @@
+{% extends 'catalogo/base.html' %}
+
+{% block content %}
+<h2>Buscar Producto</h2>
+<form method="get">
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+{% if resultados %}
+    <h3>Resultados</h3>
+    <h4>Carteras</h4>
+    <ul>
+        {% for cartera in resultados.carteras %}
+        <li>{{ cartera.nombre }} - ${{ cartera.precio }}</li>
+        {% endfor %}
+    </ul>
+    <h4>Remeras</h4>
+    <ul>
+        {% for remera in resultados.remeras %}
+        <li>{{ remera.nombre }} - ${{ remera.precio }}</li>
+        {% endfor %}
+    </ul>
+    <h4>Pulseras</h4>
+    <ul>
+        {% for pulsera in resultados.pulseras %}
+        <li>{{ pulsera.nombre }} - ${{ pulsera.precio }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

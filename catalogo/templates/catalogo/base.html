@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tienda de Ropa</title>
+</head>
+<body>
+    <header>
+        <h1>Tienda de Ropa</h1>
+        <nav>
+            <a href="{% url 'lista_productos' %}">Inicio</a>
+            <a href="{% url 'buscar_producto' %}">Buscar</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
